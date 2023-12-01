@@ -38,14 +38,16 @@ void AMyHero::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 	PlayerInputComponent->BindAction("Jump", IE_Released, this, &AMyHero::StopJumping);
 }
 // initial input Keys
-void AMyHero::MoveForward(float Value)
+void AMyHero::MoveForward(float Value) 
 {
-const FVector ForwardVector = GetActorForwardVector(); 
+const FVector ForwardVector = GetActorForwardVector();
+ AddMovementInput(ForwardVector,Value);
 }
 
-void AMyHero::MoveRight(float Value)
+void AMyHero::MoveRight(float Value) 
 {
 const FVector RightVector = GetActorRightVector();
+AddMovementInput(RightVector,Value);
 }
 
 void AMyHero::Jump()
