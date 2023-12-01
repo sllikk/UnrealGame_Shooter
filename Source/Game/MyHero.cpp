@@ -30,5 +30,38 @@ void AMyHero::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 
+	// entering keys for movement
+	PlayerInputComponent->BindAxis("MoveForward",this, &AMyHero::MoveForward);
+	PlayerInputComponent->BindAxis("MoveRight", this, &AMyHero::MoveRight);
+	// entering keys for jump
+	PlayerInputComponent->BindAction("Jump",IE_Pressed, this, &AMyHero::Jump);
+	PlayerInputComponent->BindAction("Jump", IE_Released, this, &AMyHero::StopJumping);
 }
+// initial input Keys
+void AMyHero::MoveForward(float Value)
+{
+const FVector ForwardVector = GetActorForwardVector(); 
+}
+
+void AMyHero::MoveRight(float Value)
+{
+const FVector RightVector = GetActorRightVector();
+}
+
+void AMyHero::Jump()
+{
+	Super::Jump();
+
+}
+
+void AMyHero::StopJumping()
+{
+	Super::StopJumping();
+
+}
+
+
+
+
+
 
