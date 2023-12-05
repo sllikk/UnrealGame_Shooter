@@ -31,5 +31,7 @@ public:
 	 void MoveRight(float Value) ;
 	virtual void Jump() override;
 	virtual void StopJumping() override;
+
+
 	
 }; 

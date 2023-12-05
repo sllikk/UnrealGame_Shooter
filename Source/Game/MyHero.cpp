@@ -3,6 +3,9 @@
 
 #include "MyHero.h"
 
+#include "GameFramework/CharacterMovementComponent.h"
+#include "Windows/AllowWindowsPlatformTypes.h"
+
 // Sets default values
 AMyHero::AMyHero()
 {
@@ -22,7 +25,8 @@ void AMyHero::BeginPlay()
 void AMyHero::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-
+	
+	
 }
 
 // Called to bind functionality to input
