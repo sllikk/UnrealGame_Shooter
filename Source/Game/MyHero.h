@@ -26,12 +26,18 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
-
+//move
 	 void MoveForward(float Value) ;
 	 void MoveRight(float Value) ;
+//jump
 	virtual void Jump() override;
 	virtual void StopJumping() override;
+//run
+	void Sprint();
+	void StopSprint();
+	float RunningSpeed;
 
-
-	
-}; 
+private:
+	float WalkingSpeed;
+	bool blsRunning;
+};
